@@ -4,7 +4,7 @@ import {
   space
 } from "@silverbulletmd/silverbullet/syscalls";
 
-export async function helloWorld() {
+export async function downloadExternalLibraries() {
   const allExternalLibraries = await system.getSpaceConfig("externalLibraries", []);
 
   const fileListCache: { [key: string]: { name: string }[] } = {};

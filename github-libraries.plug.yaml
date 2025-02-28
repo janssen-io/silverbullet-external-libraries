@@ -3,6 +3,6 @@ requiredPermissions:
   - fetch
 functions:
   helloWorld:
-    path: hello.ts:helloWorld
+    path: github-libraries.ts:downloadExternalLibraries
     command:
-      name: "Say hello"
+      name: "Download External Libraries"
