@@ -1,4 +1,6 @@
 name: github-libraries
+requiredPermissions:
+  - fetch
 functions:
   helloWorld:
     path: hello.ts:helloWorld

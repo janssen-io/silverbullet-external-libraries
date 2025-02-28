@@ -8,4 +8,7 @@ To update the [[!silverbullet.md/Libraries|libraries]] specified below, run {[Li
 indexPage: "[[index]]"
 libraries:
 - import: "[[!silverbullet.md/Library/Core/*]]"
+
+externalLibraries:
+- "gh://janssen-io/silverbullet-libraries/Library/Test"
 ```
