@@ -10,5 +10,5 @@ libraries:
 - import: "[[!silverbullet.md/Library/Core/*]]"
 
 externalLibraries:
-- "gh://janssen-io/silverbullet-libraries/Library/Test"
+- "gh://janssen-io/silverbullet-libraries/Library/LogseqDarkTheme"
 ```

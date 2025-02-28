@@ -2,7 +2,7 @@ name: github-libraries
 requiredPermissions:
   - fetch
 functions:
-  helloWorld:
+  downloadExternalLibraries:
     path: github-libraries.ts:downloadExternalLibraries
     command:
       name: "Download External Libraries"
