@@ -1,5 +1,4 @@
 deno.lock
-github-libraries.plug.js
 
 test-space/.silverbullet.db*
 test-space/Library/*
