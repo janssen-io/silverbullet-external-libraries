@@ -1,4 +1,4 @@
-name: hello
+name: github-libraries
 functions:
   helloWorld:
     path: hello.ts:helloWorld
