@@ -61,7 +61,7 @@ The repository must contain an `index.json` in the root of the repository with
 the following structure for all files of the library that are to be downloaded:
 ```json
 [
-    { name: "Library/<library>/<file>" },
+    { "name": "Library/<library>/<file>" },
     // ...
 ]
 ```
@@ -69,8 +69,8 @@ the following structure for all files of the library that are to be downloaded:
 for example:
 ```json
 [
-    { name: "Library/LogseqDarkTheme/theme.md" },
-    { name: "Library/LogseqDarkTheme/theme/tree.md" }
+    { "name": "Library/LogseqDarkTheme/theme.md" },
+    { "name": "Library/LogseqDarkTheme/theme/tree.md" }
 ]
 ```
 
