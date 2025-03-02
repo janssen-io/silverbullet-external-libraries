@@ -5,7 +5,7 @@ Download SilverBullet Libraries from other sources than federated spaces.
 
 - [x] GitHub repositories
 - [ ] GitHub releases
-- [ ] http(s)
+- [x] http(s)
 
 ## Build
 To build this plug, make sure you have [SilverBullet installed with Deno](https://silverbullet.md/Install/Deno). Then, build the plug with:

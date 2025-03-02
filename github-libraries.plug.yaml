@@ -3,6 +3,6 @@ requiredPermissions:
   - fetch
 functions:
   downloadExternalLibraries:
-    path: github-libraries.ts:downloadExternalLibraries
+    path: plug/github-libraries.ts:downloadExternalLibraries
     command:
       name: "Download External Libraries"
