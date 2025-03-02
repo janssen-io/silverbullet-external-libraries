@@ -5,4 +5,4 @@ functions:
   downloadExternalLibraries:
     path: plug/github-libraries.ts:downloadExternalLibraries
     command:
-      name: "Download External Libraries"
+      name: "External Libraries: Update"

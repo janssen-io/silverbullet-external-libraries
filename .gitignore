@@ -3,3 +3,4 @@ deno.lock
 github-libraries.plug.js.map
 test-space/.silverbullet.db*
 test-space/Library/*
+test-space/_plug/treeview.plug.js
