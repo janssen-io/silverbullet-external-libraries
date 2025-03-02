@@ -1,5 +1,5 @@
 import { assert, assertEquals } from "@std/assert";
-import { getLibraryPath, getLibraryRoot } from "./github-libraries.ts";
+import { getLibraryPath, getLibraryRoot } from "./external-libraries.ts";
 
 Deno.test("getLibraryRoot: undefined if not a library", () => {
   assertEquals(getLibraryRoot(["a", "b", "c"], []), undefined);

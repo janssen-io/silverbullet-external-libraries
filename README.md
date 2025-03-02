@@ -10,7 +10,6 @@ Download SilverBullet Libraries from other sources than federated spaces.
 ## Build
 To build this plug, make sure you have [SilverBullet installed with Deno](https://silverbullet.md/Install/Deno). Then, build the plug with:
 
-
 ```shell
 # debug
 deno task build
@@ -37,7 +36,7 @@ SilverBullet will automatically sync and load the new version of the plug, just 
 If you would like to install this plug straight from Github, make sure you have the `.js` file committed to the repo and simply add
 
 ```yaml
-- github:janssen-io/silverbullet-github-libraries-plug/github-libraries.plug.js
+- github:janssen-io/silverbullet-external-libraries/external-libraries.plug.js
 ```
 
 to your `PLUGS` file, run `Plugs: Update` command and off you go!

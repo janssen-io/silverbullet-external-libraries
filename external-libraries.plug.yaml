@@ -1,8 +1,8 @@
-name: github-libraries
+name: external-libraries
 requiredPermissions:
   - fetch
 functions:
   downloadExternalLibraries:
-    path: plug/github-libraries.ts:downloadExternalLibraries
+    path: plug/external-libraries.ts:downloadExternalLibraries
     command:
       name: "External Libraries: Update"

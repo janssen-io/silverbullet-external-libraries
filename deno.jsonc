@@ -1,8 +1,8 @@
 {
   "tasks": {
-    "build": "silverbullet plug:compile --debug -c deno.jsonc github-libraries.plug.yaml",
-    "prod": "silverbullet plug:compile -c deno.jsonc github-libraries.plug.yaml",
-    "watch": "silverbullet plug:compile -c deno.jsonc github-libraries.plug.yaml -w"
+    "build": "silverbullet plug:compile --debug -c deno.jsonc external-libraries.plug.yaml",
+    "prod": "silverbullet plug:compile -c deno.jsonc external-libraries.plug.yaml",
+    "watch": "silverbullet plug:compile -c deno.jsonc external-libraries.plug.yaml -w"
   },
   "lint": {
     "rules": {
