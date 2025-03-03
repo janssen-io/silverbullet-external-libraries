@@ -12,7 +12,7 @@ runs:
 
     - name: Run Tests
       shell: bash
-      run: deno test
+      run: deno test --coverage=cov_profile
 
     - name: Coverage
       shell: bash
