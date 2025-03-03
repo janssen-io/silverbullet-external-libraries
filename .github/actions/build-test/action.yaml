@@ -20,7 +20,7 @@ runs:
 
     - name: Setup SilverBullet
       shell: bash
-      run: deno install -f --name silverbullet  --unstable-kv --unstable-worker-options -A https://get.silverbullet.md
+      run: deno install -f --global --name silverbullet  --unstable-kv --unstable-worker-options -A https://get.silverbullet.md
 
     - name: Add Deno to PATH
       shell: bash
