@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Build & Test"
-        uses: ".github/actions/build-test"
+        uses: "./.github/actions/build-test"
 
       - name: Commit and push if on main
         if: github.ref == 'refs/heads/main'
