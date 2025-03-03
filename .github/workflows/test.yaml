@@ -8,5 +8,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
       - name: "Build & Test"
-        uses: "./.github/actions/build-test.yaml"
+        uses: "./.github/actions/build-test"
