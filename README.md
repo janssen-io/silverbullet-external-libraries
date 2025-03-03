@@ -15,7 +15,7 @@ To build this plug, make sure you have [SilverBullet installed with Deno](https:
 deno task build
 
 # production
-deno task prod
+deno task build:release
 ```
 
 Or to watch for changes and rebuild automatically

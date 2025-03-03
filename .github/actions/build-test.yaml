@@ -1,0 +1,31 @@
+name: "Build & Test"
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - uses: denoland/setup-deno@v2
+      with:
+        deno-version: v2.x
+
+    - name: Verify formatting
+      run: deno fmt --check
+
+    - name: Run Deno test
+      run: deno task test
+
+    - name: Coverage
+      run: deno coverage --lcov cov_profile/ > cov.lcov
+
+    - name: Setup silverbullet
+      run: deno install -f --name silverbullet  --unstable-kv --unstable-worker-options -A https://get.silverbullet.md
+
+    - name: Add Deno bin to PATH
+      run: echo "$HOME/.deno/bin" >> $GITHUB_PATH
+
+    - name: Silverbullet version
+      run: silverbullet --version
+
+    - name: Run Deno build task
+      run: deno task build:release

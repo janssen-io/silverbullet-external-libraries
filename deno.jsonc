@@ -1,7 +1,7 @@
 {
   "tasks": {
     "build": "silverbullet plug:compile --debug -c deno.jsonc external-libraries.plug.yaml",
-    "prod": "silverbullet plug:compile -c deno.jsonc external-libraries.plug.yaml",
+    "build:release": "silverbullet plug:compile -c deno.jsonc external-libraries.plug.yaml",
     "watch": "silverbullet plug:compile -c deno.jsonc external-libraries.plug.yaml -w"
   },
   "lint": {
