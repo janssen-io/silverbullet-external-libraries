@@ -75,13 +75,13 @@ export function createResolver(lib: string) {
   console.log("extLib | Lib", scheme, rest);
   let resolver: Resolver;
   let path: string;
-  if (scheme === "gh") {
+  if (scheme === "gh" || scheme === "github") {
     const [user, repo, ...pathParts] = rest.split("/");
     resolver = new GithubUserContentResolver(user, repo);
     path = pathParts.join("/");
-  } else if (scheme === "https") {
+  } else if (scheme === "https" || scheme === "http") {
     const [domain, ...pathParts] = rest.split("/");
-    resolver = new StaticFileResolver(domain);
+    resolver = new StaticFileResolver(domain, scheme);
     path = pathParts.join("/");
   } else {
     return {};

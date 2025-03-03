@@ -53,7 +53,7 @@ externalLibraries:
 - "gh://janssen-io/silverbullet-libraries/Library/LogseqDarkTheme"
 ```
 
-And run the `Download external libraries` command in your SilverBullet space.
+And run the `External Libraries: Update` command in your SilverBullet space.
 
 ### External Library requirements
 The repository must contain an `index.json` in the root of the repository with 
