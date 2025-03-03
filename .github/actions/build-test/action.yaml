@@ -18,9 +18,14 @@ runs:
       shell: bash
       run: deno coverage --html cov_profile/ > cov.html
 
+    - name: Convert HTML to Markdown
+      uses: rknj/html2markdown@v0.1.0
+      with:
+        html-file: "cov.html"
+
     - name: Write to Job Summary
       shell: bash
-      run: cat cov.html >> $GITHUB_STEP_SUMMARY
+      run: cat cov.md >> $GITHUB_STEP_SUMMARY
 
     - name: Setup SilverBullet
       shell: bash
