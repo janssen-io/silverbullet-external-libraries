@@ -15,8 +15,7 @@
   },
   "fmt": {
     "exclude": [
-      "*.md",
-      "**/*.md",
+      "test-space/",
       "*.plug.js"
     ]
   },
