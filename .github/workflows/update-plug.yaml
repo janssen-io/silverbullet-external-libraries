@@ -1,4 +1,4 @@
-name: Test
+name: Update Plug
 
 on:
   push:
@@ -17,11 +17,27 @@ jobs:
       - name: "Build & Test"
         uses: "./.github/actions/build-test"
 
+      - name: "Check if plug has changed"
+        shell: pwsh
+        id: check_plug
+        run: |
+          $diff = git diff --name-only
+          $SourceDiff = $diff | Where-Object { $_ -eq "external-libraries.plug.js" }
+          $HasDiff = $SourceDiff.Length -gt 0
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "has_changed=$HasDiff"
+          Write-Host "Plug has changed? $HasDiff"
+
       - name: Commit and push if on main
-        if: github.ref == 'refs/heads/main'
+        if: steps.check_plug.outputs.has_changed == 'True'
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git add external-libraries.plug.js || true
           git commit -m "Auto update plug.js [skip ci]" || true
-          git push
+
+      - name: Push changes with Git CLI
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git push origin HEAD:main

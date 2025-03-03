@@ -72,7 +72,6 @@ export function getLibraryPath(path: string, root: string) {
 
 export function createResolver(lib: string) {
   const [scheme, rest] = lib.split("://");
-  console.log("extLib | Lib", scheme, rest);
   let resolver: Resolver;
   let path: string;
   if (scheme === "gh" || scheme === "github") {
