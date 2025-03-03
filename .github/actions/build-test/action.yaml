@@ -6,30 +6,30 @@ runs:
       with:
         deno-version: v2.x
 
-    - name: Verify formatting
+    - name: Verify Formatting
       shell: bash
       run: deno fmt --check --ignore="external-libraries.plug.js,test-space/"
 
-    - name: Run Deno test
+    - name: Run Tests
       shell: bash
-      run: deno task test
+      run: deno test
 
     - name: Coverage
       shell: bash
       run: deno coverage --lcov cov_profile/ > cov.lcov
 
-    - name: Setup silverbullet
+    - name: Setup SilverBullet
       shell: bash
       run: deno install -f --name silverbullet  --unstable-kv --unstable-worker-options -A https://get.silverbullet.md
 
-    - name: Add Deno bin to PATH
+    - name: Add Deno to PATH
       shell: bash
       run: echo "$HOME/.deno/bin" >> $GITHUB_PATH
 
-    - name: Silverbullet version
+    - name: Show Silverbullet Version
       shell: bash
       run: silverbullet --version
 
-    - name: Run Deno build task
+    - name: Build Plug
       shell: bash
       run: deno task build:release
