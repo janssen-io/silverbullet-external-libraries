@@ -2,7 +2,9 @@
   "tasks": {
     "build": "silverbullet plug:compile --debug -c deno.jsonc external-libraries.plug.yaml",
     "build:release": "silverbullet plug:compile -c deno.jsonc external-libraries.plug.yaml",
-    "watch": "silverbullet plug:compile -c deno.jsonc external-libraries.plug.yaml -w"
+    "watch": "silverbullet plug:compile -c deno.jsonc external-libraries.plug.yaml -w",
+    "format": "deno fmt --ignore='external-libraries.plug.js,test-space/'",
+    "format:check": "deno fmt --check --ignore='external-libraries.plug.js,test-space/'"
   },
   "lint": {
     "rules": {
