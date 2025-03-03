@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Build & Test"
-        uses: "./.github/actions/build-test"
+        uses: "./.github/actions/build-test.yaml"
