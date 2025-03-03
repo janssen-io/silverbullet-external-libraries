@@ -1,0 +1,22 @@
+name: Test
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: "Build & Test"
+        uses: "./.github/actions/build-test"
+
+      - name: Publish
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            external-libraries.plug.js
+          prerelease: ${{ contains(github.ref_name, '-') }}

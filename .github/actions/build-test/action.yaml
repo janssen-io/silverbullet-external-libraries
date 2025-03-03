@@ -1,0 +1,52 @@
+name: "Build & Test"
+runs:
+  using: "composite"
+  steps:
+    - uses: denoland/setup-deno@v2
+      with:
+        deno-version: v2.x
+
+    - name: Verify Formatting
+      shell: bash
+      run: deno task format:check
+
+    - name: Run Tests
+      shell: bash
+      run: deno test --coverage=cov_profile
+
+    - name: Coverage
+      shell: bash
+      run: deno coverage --lcov cov_profile/ > cov.lcov
+
+    - name: Setup .NET Core # Required to execute ReportGenerator
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.x
+        dotnet-quality: "ga"
+
+    - name: ReportGenerator
+      uses: danielpalme/ReportGenerator-GitHub-Action@5.4.4
+      with:
+        reports: cov.lcov
+        targetdir: coveragereport
+        reporttypes: Html;MarkdownSummaryGithub
+
+    - name: Publish coverage in build summary
+      run: cat coveragereport/SummaryGithub.md >> $GITHUB_STEP_SUMMARY
+      shell: bash
+
+    - name: Setup SilverBullet
+      shell: bash
+      run: deno install -f --global --name silverbullet  --unstable-kv --unstable-worker-options -A https://get.silverbullet.md
+
+    - name: Add Deno to PATH
+      shell: bash
+      run: echo "$HOME/.deno/bin" >> $GITHUB_PATH
+
+    - name: Show Silverbullet Version
+      shell: bash
+      run: silverbullet --version
+
+    - name: Build Plug
+      shell: bash
+      run: deno task build:release

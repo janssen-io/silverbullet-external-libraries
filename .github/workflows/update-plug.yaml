@@ -1,0 +1,27 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: "Build & Test"
+        uses: "./.github/actions/build-test"
+
+      - name: Commit and push if on main
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add external-libraries.plug.js || true
+          git commit -m "Auto update plug.js [skip ci]" || true
+          git push
