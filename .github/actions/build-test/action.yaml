@@ -25,7 +25,7 @@ runs:
 
     - name: Write to Job Summary
       shell: bash
-      run: cat cov.md >> $GITHUB_STEP_SUMMARY
+      run: echo "${{ steps.html2markdown.outputs.markdown-content }}" >> $GITHUB_STEP_SUMMARY
 
     - name: Setup SilverBullet
       shell: bash
