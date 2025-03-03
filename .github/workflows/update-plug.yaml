@@ -39,6 +39,7 @@ jobs:
           git commit -m "Auto update plug.js [skip ci]" || true
 
       - name: Push changes with Git CLI
+        if: steps.check_plug.outputs.has_changed == 'True'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
