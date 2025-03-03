@@ -17,6 +17,7 @@ jobs:
       - name: Publish
         uses: softprops/action-gh-release@v1
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           files: |
             external-libraries.plug.js
           prerelease: ${{ contains(github.ref_name, '-') }}
