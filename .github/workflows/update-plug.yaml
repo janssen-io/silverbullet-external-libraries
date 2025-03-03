@@ -14,8 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: "Build & Test"
-        uses: "./.github/actions/build-test"
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - uses: "./.github/actions/build"
 
       - name: "Check if plug has changed"
         shell: pwsh

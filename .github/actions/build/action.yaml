@@ -1,0 +1,19 @@
+name: "Build"
+runs:
+  using: "composite"
+  steps:
+    - name: Setup SilverBullet
+      shell: bash
+      run: deno install -f --global --name silverbullet  --unstable-kv --unstable-worker-options -A https://get.silverbullet.md
+
+    - name: Add Deno to PATH
+      shell: bash
+      run: echo "$HOME/.deno/bin" >> $GITHUB_PATH
+
+    - name: Show Silverbullet Version
+      shell: bash
+      run: silverbullet --version
+
+    - name: Build Plug
+      shell: bash
+      run: deno task build:release
