@@ -1,5 +1,10 @@
 # SilverBullet Plug: External Libraries
 
+![GitHub Release](https://img.shields.io/github/v/release/janssen-io/silverbullet-external-libraries)
+![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/janssen-io/silverbullet-external-libraries/latest/total)
+![example workflow](https://github.com/janssen-io/silverbullet-external-libraries/actions/workflows/update-plug.yaml/badge.svg)
+![example workflow](https://github.com/janssen-io/silverbullet-external-libraries/actions/workflows/create-release.yaml/badge.svg)
+
 Download SilverBullet Libraries from other sources than federated spaces.
 
 - [x] GitHub repositories
@@ -39,9 +44,14 @@ watch the logs (browser and server) to see when this happens.
 ## Installation
 
 If you would like to install this plug straight from Github, make sure you have
-the `.js` file committed to the repo and simply add
+the `.js` file committed to the repo and simply add one of the following lines
+(when in doubt, choose the first)
 
 ```yaml
+# Latest release
+- ghr:janssen-io/silverbullet-external-libraries
+
+# Development version, might be unstable
 - github:janssen-io/silverbullet-external-libraries/external-libraries.plug.js
 ```
 
