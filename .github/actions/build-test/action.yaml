@@ -8,7 +8,7 @@ runs:
 
     - name: Verify formatting
       shell: bash
-      run: deno fmt --check
+      run: deno fmt --check --ignore="external-libraries.plug.js,test-space/"
 
     - name: Run Deno test
       shell: bash
