@@ -1,5 +1,9 @@
-import { editor } from "@silverbulletmd/silverbullet/syscalls";
-import { space, system } from "@silverbulletmd/silverbullet/syscalls";
+// import { editor, space, system } from "@silverbulletmd/silverbullet/syscalls";
+import {
+  editor,
+  space,
+  system,
+} from "https://raw.githubusercontent.com/silverbulletmd/silverbullet/main/plug-api/syscalls.ts";
 import { Resolver } from "./resolvers/resolver.ts";
 import { GithubUserContentResolver } from "./resolvers/githubUserContentResolver.ts";
 import { StaticFileResolver } from "./resolvers/StaticFileResolver.ts";
@@ -58,7 +62,7 @@ async function download(
     const req = await fetch(resolver.resolvePath(`${root}/${file.name}`));
     const text = await req.text();
 
-    space.writeAttachment(file.name, new TextEncoder().encode(text));
+    space.writeDocument(file.name, new TextEncoder().encode(text));
   }
 }
 
