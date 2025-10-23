@@ -1,3 +1,9 @@
+> [!WARNING]  
+> This plug has been replaced by the following built-in functionality:
+> 
+> * Importers: https://silverbullet.md/Library/Std/Infrastructure/Import
+> * GitHub Importer: https://silverbullet.md/Library/Std/Infrastructure/Github
+
 # SilverBullet Plug: External Libraries
 
 ![GitHub Release](https://img.shields.io/github/v/release/janssen-io/silverbullet-external-libraries)
